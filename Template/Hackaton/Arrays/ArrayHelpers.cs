@@ -78,10 +78,20 @@ namespace Hackaton
             throw new NotImplementedException("Error: CopyFrom is not implemented!");
         }
 
+        /// <summary>
+        /// createing array with fixed lenght(element) and the participants in the array with value(number)
+        /// </summary>
+        /// <param name="source">The array to add to</param>
+        /// <param name="element">The element to add</param>
+        /// <returns>A new array that has all the elements from the original array and the added element at head position.</returns>
+        /// <author>Alexander Grigorov</author>
         public static void Fill(int[] source, int element)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Fill is not implemented!");
+
+            for (int i = 0; i < source.Length; i++)
+            {
+                source[i] = element;
+            }
         }
 
         public static int FirstIndexOf(int[] source, int target)
