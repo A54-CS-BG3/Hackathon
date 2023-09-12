@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Hackaton
 {
@@ -60,16 +62,46 @@ namespace Hackaton
             return result;
         }
 
+        /// <summary>
+        /// Checks if <paramref name="source"/> contains given <paramref name="element"/>. If so returns true, else returns false.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="element"></param>
+        /// <returns>Returns true if <paramref name="element"/> exists in <paramref name="source"/>. Else return false.</returns>
+        /// <author> Nikolay Dobrev </author>
         public static bool Contains(int[] source, int element)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Contains is not implemented!");
+            bool result = false;
+
+            foreach(int num in source)
+            {
+                if(num == element)
+                {
+                    result = true;
+                    return result;
+                }
+            }
+
+            return result;
         }
 
+        /// <summary>
+        /// It copies the first <paramref name="count"/> elements from <paramref name="sourceArray"/> into <paramref name="destinationArray"/>
+        /// </summary>
+        /// <param name="sourceArray"></param>
+        /// <param name="destinationArray"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        /// <author>Ventsislav Georgiev</author>
         public static void Copy(int[] sourceArray, int[] destinationArray, int count)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Copy is not implemented!");
+            if (sourceArray.Length > destinationArray.Length)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    destinationArray[i] = sourceArray[i];
+                }
+            }            
         }
 
         public static void CopyFrom(int[] sourceArray, int sourceStartIndex, int[] destinationArray, int destStartIndex, int count)
@@ -100,12 +132,16 @@ namespace Hackaton
             throw new NotImplementedException("Error: FirstIndexOf is not implemented!");
         }
         /// <summary>
-        /// 
+        /// Checks if "source" is empty or null and returns -1.
+        /// Iterates through the array backwards and compares if "source" matches "target".
+        /// If true returns the last occurance of "target"
+        /// If false returns -1.
         /// </summary>
         /// <param name="source"></param>
         /// <param name="target"></param>
-        /// <returns></returns>
+        /// <returns> Last occurance of "target" </returns>
         /// <exception cref="NotImplementedException"></exception>
+        /// <author> Georgi Aleksandrov </author>
         public static int LastIndexOf(int[] source, int target)
         {
             if (source == null || source.Length == 0)
@@ -124,16 +160,41 @@ namespace Hackaton
             return -1;
         }
 
+        /// <summary>
+        /// Checks if given <paramref name="index"/> is valid. If it is valid return true, if not return false.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="index"></param>
+        /// <returns>Returns true if <paramref name="index"/> is valid, else return false.</returns>
+        /// <author> Nikolay Dobrev</author>
         public static bool IsValidIndex(int[] source, int index)
-        {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: IsValidIndex is not implemented!");
+        {           
+            if(index >= 0 && index < source.Length)
+            {
+                return true;
+            }
+
+            return false;
         }
 
+        /// <summary>
+        /// Removes all elements from <paramref name="source"/> array that do not match <paramref name="element"/>
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="element"></param>
+        /// <returns>An array of ints with all elements from source that are not equal to element.</returns>
+        /// <author>Ventsislav Georgiev</author>
         public static int[] RemoveAllOccurrences(int[] source, int element)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: RemoveAllOccurrences is not implemented!");
+            List<int> list = new List<int>();
+
+            for (int i = 0; i < source.Length; i++)
+            {
+                if (source[i] != element)
+                    list.Add(source[i]);
+            }
+
+            return list.ToArray();
         }
 
         public static void Reverse(int[] arrayToReverse)
