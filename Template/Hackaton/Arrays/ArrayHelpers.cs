@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Hackaton
 {
@@ -43,8 +45,10 @@ namespace Hackaton
 
         public static void Copy(int[] sourceArray, int[] destinationArray, int count)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Copy is not implemented!");
+            for (int i = 0; i < count; i++)
+            {
+                destinationArray[i] = sourceArray[i];
+            }
         }
 
         public static void CopyFrom(int[] sourceArray, int sourceStartIndex, int[] destinationArray, int destStartIndex, int count)
@@ -79,8 +83,15 @@ namespace Hackaton
 
         public static int[] RemoveAllOccurrences(int[] source, int element)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: RemoveAllOccurrences is not implemented!");
+            List<int> list = new List<int>();
+
+            for (int i = 0; i < source.Length; i++)
+            {
+                if (source[i] != element)
+                    list.Add(source[i]);
+            }
+
+            return list.ToArray();
         }
 
         public static void Reverse(int[] arrayToReverse)
