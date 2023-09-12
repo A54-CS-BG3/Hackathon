@@ -140,8 +140,12 @@ namespace Hackaton
 
         public static string Section(string source, int start, int end)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Section is not implemented!");
+            StringBuilder result = new StringBuilder();
+            for (int i = start; i <= end; i++)
+            {
+                result.Append(source[i]);
+            }
+            return result.ToString();
         }
     }
 }
