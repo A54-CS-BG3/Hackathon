@@ -58,6 +58,7 @@ namespace Hackaton
         /// <param name="source"></param>
         /// <param name="target"></param>
         /// <returns>If <paramref name="source"/> begins with <paramref name="target"/> returns true, else return false.</returns>
+        /// <author> Nikolay Dobrev</author>
         public static bool StartsWith(string source, char target)
         {
             if(source.Length == 0)
