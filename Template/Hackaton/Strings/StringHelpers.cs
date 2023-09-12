@@ -52,10 +52,25 @@ namespace Hackaton
             return false;
         }
 
+        /// <summary>
+        /// Checks if <paramref name="source"/> begins with <paramref name="target"/> char.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
+        /// <returns>If <paramref name="source"/> begins with <paramref name="target"/> returns true, else return false.</returns>
         public static bool StartsWith(string source, char target)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: StartsWith is not implemented!");
+            if(source.Length == 0)
+            {
+                return false;
+            }
+
+            if (source[0] == target)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -109,10 +124,22 @@ namespace Hackaton
             return source;
         }
 
+        /// <summary>
+        /// Returns new string with <paramref name="length"/> of chars with such as the <paramref name="source"/> is at the end of the new string, preceded by <paramref name="length"/>.Length - <paramref name="source"/>.Length number of  <paramref name="paddingSymbol"/>.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="length"></param>
+        /// <param name="paddingSymbol"></param>
+        /// <returns>Returns new string with <paramref name="length"/> of chars with such as the <paramref name="source"/> is at the end of the new string, preceded by <paramref name="length"/>.Length - <paramref name="source"/>.Length number of  <paramref name="paddingSymbol"/>. </returns>
+        /// <author> Nikolay Dobrev </author>
         public static string PadStart(string source, int length, char paddingSymbol)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: PadStart is not implemented!");
+            //Possible problem if new length is shorter than source.Length or if source = null
+
+            string result = new string(paddingSymbol, length - source.Length) + source;
+
+            return result;
+            
         }
 
         /// <summary>
@@ -132,20 +159,38 @@ namespace Hackaton
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Reverse the <paramref name="source"/> array
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns>the reversed string</returns>
+        /// <author>Ventsislav Georgiev</author>
         public static string Reverse(string source)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Reverse is not implemented!");
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = source.Length - 1; i >= 0; i--)
+            {
+                stringBuilder.Append(source[i]);
+            }
+            return stringBuilder.ToString();
         }
 
+        /// <summary>
+        /// Extracts a substring from <paramref name="source"/> array
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <returns>the substring extracted from <paramref name="source"/></returns>
+        /// <author>Ventsislav Georgiev</author>
         public static string Section(string source, int start, int end)
         {
-            StringBuilder result = new StringBuilder();
+            StringBuilder stringBuilder = new StringBuilder();
             for (int i = start; i <= end; i++)
             {
-                result.Append(source[i]);
+                stringBuilder.Append(source[i]);
             }
-            return result.ToString();
+            return stringBuilder.ToString();
         }
     }
 }
