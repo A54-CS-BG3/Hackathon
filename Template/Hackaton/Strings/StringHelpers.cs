@@ -42,8 +42,16 @@ namespace Hackaton
             throw new NotImplementedException("Error: StartsWith is not implemented!");
         }
 
+        /// <summary>
+        /// Checks if the last element in <paramref name="source"/> is equal to <paramref name="target"/>
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
+        /// <returns>true if last element of source is equal to target, false otherwise</returns>
+        /// <author>Ventsislav Georgiev</author>
         public static bool EndsWith(string source, char target)
         {
+            if (source.Length == 0) return false;
             return source[source.Length - 1] == target;
         }
 
@@ -77,6 +85,13 @@ namespace Hackaton
             throw new NotImplementedException("Error: PadStart is not implemented!");
         }
 
+        /// <summary>
+        /// Creates a new string with <paramref name="source"/> string repeated
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="times"></param>
+        /// <returns>a new string with source repeated "times" times</returns>
+        /// <author>Ventsislav Georgiev</author>
         public static string Repeat(string source, int times)
         {
             StringBuilder sb = new StringBuilder();

@@ -43,12 +43,23 @@ namespace Hackaton
             throw new NotImplementedException("Error: Contains is not implemented!");
         }
 
+        /// <summary>
+        /// It copies the first <paramref name="count"/> elements from <paramref name="sourceArray"/> into <paramref name="destinationArray"/>
+        /// </summary>
+        /// <param name="sourceArray"></param>
+        /// <param name="destinationArray"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        /// <author>Ventsislav Georgiev</author>
         public static void Copy(int[] sourceArray, int[] destinationArray, int count)
         {
-            for (int i = 0; i < count; i++)
+            if (sourceArray.Length > destinationArray.Length)
             {
-                destinationArray[i] = sourceArray[i];
-            }
+                for (int i = 0; i < count; i++)
+                {
+                    destinationArray[i] = sourceArray[i];
+                }
+            }            
         }
 
         public static void CopyFrom(int[] sourceArray, int sourceStartIndex, int[] destinationArray, int destStartIndex, int count)
@@ -81,6 +92,13 @@ namespace Hackaton
             throw new NotImplementedException("Error: IsValidIndex is not implemented!");
         }
 
+        /// <summary>
+        /// Removes all elements from <paramref name="source"/> array that do not match <paramref name="element"/>
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="element"></param>
+        /// <returns>An array of ints with all elements from source that are not equal to element.</returns>
+        /// <author>Ventsislav Georgiev</author>
         public static int[] RemoveAllOccurrences(int[] source, int element)
         {
             List<int> list = new List<int>();
