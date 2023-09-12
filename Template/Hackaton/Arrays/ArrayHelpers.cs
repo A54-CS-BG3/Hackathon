@@ -62,10 +62,27 @@ namespace Hackaton
             return result;
         }
 
+        /// <summary>
+        /// Checks if <paramref name="source"/> contains given <paramref name="element"/>. If so returns true, else returns false.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="element"></param>
+        /// <returns>Returns true if <paramref name="element"/> exists in <paramref name="source"/>. Else return false.</returns>
+        /// <author> Nikolay Dobrev </author>
         public static bool Contains(int[] source, int element)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Contains is not implemented!");
+            bool result = false;
+
+            foreach(int num in source)
+            {
+                if(num == element)
+                {
+                    result = true;
+                    return result;
+                }
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -133,10 +150,21 @@ namespace Hackaton
             return -1;
         }
 
+        /// <summary>
+        /// Checks if given <paramref name="index"/> is valid. If it is valid return true, if not return false.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="index"></param>
+        /// <returns>Returns true if <paramref name="index"/> is valid, else return false.</returns>
+        /// <author> Nikolay Dobrev</author>
         public static bool IsValidIndex(int[] source, int index)
-        {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: IsValidIndex is not implemented!");
+        {           
+            if(index >= 0 && index < source.Length)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
