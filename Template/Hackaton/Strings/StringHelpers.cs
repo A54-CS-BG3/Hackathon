@@ -132,16 +132,38 @@ namespace Hackaton
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Reverse the <paramref name="source"/> array
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns>the reversed string</returns>
+        /// <author>Ventsislav Georgiev</author>
         public static string Reverse(string source)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Reverse is not implemented!");
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = source.Length - 1; i >= 0; i--)
+            {
+                stringBuilder.Append(source[i]);
+            }
+            return stringBuilder.ToString();
         }
 
+        /// <summary>
+        /// Extracts a substring from <paramref name="source"/> array
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <returns>the substring extracted from <paramref name="source"/></returns>
+        /// <author>Ventsislav Georgiev</author>
         public static string Section(string source, int start, int end)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Section is not implemented!");
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = start; i <= end; i++)
+            {
+                stringBuilder.Append(source[i]);
+            }
+            return stringBuilder.ToString();
         }
     }
 }
