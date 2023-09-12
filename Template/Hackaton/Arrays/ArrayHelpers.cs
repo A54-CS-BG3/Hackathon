@@ -213,8 +213,13 @@ namespace Hackaton
 
         public static void Reverse(int[] arrayToReverse)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Reverse is not implemented!");
+            int length = arrayToReverse.Length;
+            for (int i = 0; i < length / 2; i++)
+            {
+                int temp = arrayToReverse[i];
+                arrayToReverse[i] = arrayToReverse[length - 1 - i];
+                arrayToReverse[length - 1 - i] = temp;
+            }
         }
 
         public static int[] Section(int[] source, int startIndex, int endIndex)
