@@ -28,11 +28,36 @@ namespace Hackaton
             // Remove the line below then add your implementation.
             throw new NotImplementedException("Error: AppendAll is not implemented!");
         }
-
+        /// <summary>
+        /// Creates a new array with the size of "source.Length + 1"
+        /// Copies the "elements" before the specified "index"
+        /// Inserts the "element"
+        /// Copies the "elements" after the specified "index"
+        /// Returns "result"
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="index"></param>
+        /// <param name="element"></param>
+        /// <returns> result </returns>
+        /// <exception cref="NotImplementedException"></exception>
+        /// <author> Georgi Aleksandrov </author>
         public static int[] InsertAt(int[] source, int index, int element)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: InsertAt is not implemented!");
+            int[] result = new int[source.Length + 1];
+
+            for (int i = 0; i < index; i++)
+            {
+                result[i] = source[i];
+            }
+
+            result[index] = element;
+
+            for (int i = index; i < source.Length; i++)
+            {
+                result[i + 1] = source[i];
+            }
+
+            return result;
         }
 
         public static bool Contains(int[] source, int element)
@@ -64,11 +89,29 @@ namespace Hackaton
             // Remove the line below then add your implementation.
             throw new NotImplementedException("Error: FirstIndexOf is not implemented!");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public static int LastIndexOf(int[] source, int target)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: LastIndexOf is not implemented!");
+            if (source == null || source.Length == 0)
+            {
+                return -1;
+            }
+
+            for (int i = source.Length - 1; i >= 0; i--)
+            {
+                if (source[i] == target)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
         }
 
         public static bool IsValidIndex(int[] source, int index)
