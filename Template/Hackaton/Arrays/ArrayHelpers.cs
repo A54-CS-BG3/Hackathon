@@ -15,8 +15,22 @@ namespace Hackaton
         /// <author>Kiril Stanoev</author>
         public static int[] AddFirst(int[] source, int element)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: AddFirst is not implemented!");
+            int possitionOne = 1;
+
+            int[] newarr = new int[source.Length + 1];
+
+            for (int i = 0; i < source.Length + 1; i++)
+            {
+                if (i < possitionOne - 1)
+                    newarr[i] = source[i];
+
+                else if (i == possitionOne - 1)
+                    newarr[i] = element;
+
+                else
+                    newarr[i] = source[i - 1];
+            }
+            return newarr;
         }
 
         public static int[] AddLast(int[] source, int element)
