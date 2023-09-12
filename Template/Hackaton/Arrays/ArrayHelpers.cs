@@ -90,12 +90,16 @@ namespace Hackaton
             throw new NotImplementedException("Error: FirstIndexOf is not implemented!");
         }
         /// <summary>
-        /// 
+        /// Checks if "source" is empty or null and returns -1.
+        /// Iterates through the array backwards and compares if "source" matches "target".
+        /// If true returns the last occurance of "target"
+        /// If false returns -1.
         /// </summary>
         /// <param name="source"></param>
         /// <param name="target"></param>
-        /// <returns></returns>
+        /// <returns> Last occurance of "target" </returns>
         /// <exception cref="NotImplementedException"></exception>
+        /// <author> Georgi Aleksandrov </author>
         public static int LastIndexOf(int[] source, int target)
         {
             if (source == null || source.Length == 0)

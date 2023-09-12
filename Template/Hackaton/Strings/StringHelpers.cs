@@ -28,11 +28,27 @@ namespace Hackaton
             // Remove the line below then add your implementation.
             throw new NotImplementedException("Error: Concat is not implemented!");
         }
-
+        /// <summary>
+        /// Loops through each character in the string "source"
+        /// If the "symbol" is found returns true
+        /// If the "symbol" is not found returns false
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="symbol"></param>
+        /// <returns>true or false</returns>
+        /// <exception cref="NotImplementedException"></exception>
+        /// <author> Georgi Aleksandrov </author>
         public static bool Contains(string source, char symbol)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Contains is not implemented!");
+            foreach (char c in source)
+            {
+                if (c == symbol)
+                {
+                    return true;  
+                }
+            }
+
+            return false;
         }
 
         public static bool StartsWith(string source, char target)
@@ -64,11 +80,25 @@ namespace Hackaton
             // Remove the line below then add your implementation.
             throw new NotImplementedException("Error: Pad is not implemented!");
         }
-
+        /// <summary>
+        /// Compares the lenght of the "source" to the desired "lenght"
+        /// Adds "paddingSymbol" to the "source"
+        /// Then returns the new padded "source"
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="length"></param>
+        /// <param name="paddingSymbol"></param>
+        /// <returns> padded "source" </returns>
+        /// <exception cref="NotImplementedException"></exception>
+        /// <author> Georgi Aleksandrov </author>
         public static string PadEnd(string source, int length, char paddingSymbol)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: PadEnd is not implemented!");
+            while (length > source.Length)
+            {
+                source += paddingSymbol;
+            }
+
+            return source;
         }
 
         public static string PadStart(string source, int length, char paddingSymbol)
