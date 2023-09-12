@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Hackaton
 {
@@ -66,10 +68,23 @@ namespace Hackaton
             throw new NotImplementedException("Error: Contains is not implemented!");
         }
 
+        /// <summary>
+        /// It copies the first <paramref name="count"/> elements from <paramref name="sourceArray"/> into <paramref name="destinationArray"/>
+        /// </summary>
+        /// <param name="sourceArray"></param>
+        /// <param name="destinationArray"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        /// <author>Ventsislav Georgiev</author>
         public static void Copy(int[] sourceArray, int[] destinationArray, int count)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Copy is not implemented!");
+            if (sourceArray.Length > destinationArray.Length)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    destinationArray[i] = sourceArray[i];
+                }
+            }            
         }
 
         public static void CopyFrom(int[] sourceArray, int sourceStartIndex, int[] destinationArray, int destStartIndex, int count)
@@ -124,10 +139,24 @@ namespace Hackaton
             throw new NotImplementedException("Error: IsValidIndex is not implemented!");
         }
 
+        /// <summary>
+        /// Removes all elements from <paramref name="source"/> array that do not match <paramref name="element"/>
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="element"></param>
+        /// <returns>An array of ints with all elements from source that are not equal to element.</returns>
+        /// <author>Ventsislav Georgiev</author>
         public static int[] RemoveAllOccurrences(int[] source, int element)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: RemoveAllOccurrences is not implemented!");
+            List<int> list = new List<int>();
+
+            for (int i = 0; i < source.Length; i++)
+            {
+                if (source[i] != element)
+                    list.Add(source[i]);
+            }
+
+            return list.ToArray();
         }
 
         public static void Reverse(int[] arrayToReverse)

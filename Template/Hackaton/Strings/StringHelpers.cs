@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Hackaton
 {
@@ -57,10 +58,17 @@ namespace Hackaton
             throw new NotImplementedException("Error: StartsWith is not implemented!");
         }
 
+        /// <summary>
+        /// Checks if the last element in <paramref name="source"/> is equal to <paramref name="target"/>
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
+        /// <returns>true if last element of source is equal to target, false otherwise</returns>
+        /// <author>Ventsislav Georgiev</author>
         public static bool EndsWith(string source, char target)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: EndsWith is not implemented!");
+            if (source.Length == 0) return false;
+            return source[source.Length - 1] == target;
         }
 
         public static int FirstIndexOf(string source, char target)
@@ -107,10 +115,21 @@ namespace Hackaton
             throw new NotImplementedException("Error: PadStart is not implemented!");
         }
 
+        /// <summary>
+        /// Creates a new string with <paramref name="source"/> string repeated
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="times"></param>
+        /// <returns>a new string with source repeated "times" times</returns>
+        /// <author>Ventsislav Georgiev</author>
         public static string Repeat(string source, int times)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Repeat is not implemented!");
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < times; i++)
+            {
+                sb.Append(source);
+            }
+            return sb.ToString();
         }
 
         public static string Reverse(string source)
