@@ -10,11 +10,22 @@ namespace Hackaton
             // Remove the line below then add your implementation.
             throw new NotImplementedException("Error: Abbreviate is not implemented!");
         }
-
+        /// <summary>
+        /// Capitalize the first symbol of string <paramref name="source"/> and returns a new capitalized string
+        /// </summary>
+        /// <param name="source"></param>
+        /// 
+        /// <returns>String with capitalized first symbol if not null or empty</returns>
+        /// <author>Asen Asenov</author>
         public static string Capitalize(string source)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Capitalize is not implemented!");
+            if (string.IsNullOrEmpty(source))
+            {
+                return source;
+            }
+            char[] charArr = source.ToCharArray();
+            charArr[0] = char.ToUpper(charArr[0]);
+            return new string(charArr);
         }
 
         /// <summary>
@@ -92,11 +103,23 @@ namespace Hackaton
             // Remove the line below then add your implementation.
             throw new NotImplementedException("Error: FirstIndexOf is not implemented!");
         }
-
+        /// <summary>
+        /// Checks the index of last occurence of selected symbol <paramref name="symbol"/> in string <paramref name="source"/> and returns index
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="symbol"></param>
+        /// <returns>Returns last index of symbol if string contains it, else returns -1</returns>
+        /// <author>Asen Asenov</author>
         public static int LastIndexOf(string source, char symbol)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: LastIndexOf is not implemented!");
+            for (int i = source.Length - 1; i >= 0; i--)
+            {
+                if (symbol == source[i])
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
 
         public static string Pad(string source, int length, char paddingSymbol)
