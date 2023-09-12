@@ -98,10 +98,23 @@ namespace Hackaton
             return source[source.Length - 1] == target;
         }
 
+        /// <summary>
+        /// Checks the index of first occurence of selected symbol <paramref name="target"/> in string <paramref name="source"/> and returns index
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
+        /// <returns>Returns first index of target if string contains it, else returns -1</returns>
+        /// <author>Asen Asenov</author>
         public static int FirstIndexOf(string source, char target)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: FirstIndexOf is not implemented!");
+            for (int i = 0; i < source.Length; i++)
+            {
+                if (target == source[i])
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
         /// <summary>
         /// Checks the index of last occurence of selected symbol <paramref name="symbol"/> in string <paramref name="source"/> and returns index
