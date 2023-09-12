@@ -32,11 +32,29 @@ namespace Hackaton
             }
             return newarr;
         }
-
+        /// <summary>
+        /// Adds the int element at the end of the array source.
+        /// </summary>
+        /// <param name="source">The array to add to</param>
+        /// <param name="element">The element to add</param>
+        /// <returns>A new array that has all the elements from the original array and the added element at last position.</returns>
+        /// <author>Asen Asenov</author>
         public static int[] AddLast(int[] source, int element)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: AddLast is not implemented!");
+            int lastPosition = source.Length;
+            int[] newArr = new int[source.Length + 1];
+            for(int i = 0;i < newArr.Length;i++)
+            {
+                if (i == lastPosition)
+                {
+                    newArr[i] = element;
+                }
+                else
+                {
+                    newArr[i] = source[i];
+                }
+            }
+            return newArr;
         }
 
         public static int[] AppendAll(int[] source, int[] elements)
