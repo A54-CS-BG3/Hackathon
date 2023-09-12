@@ -6,10 +6,35 @@ namespace Hackaton
 {
     public class StringHelpers
     {
+        /// <summary>
+        /// You can type string and stop on the character you want by puting number after hiting enter on the string
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="maxLength"></param>
+        /// <returns>String with exact lenght typed in maxLenght</returns>
+        /// <author>Alexander Grigorov</author>
         public static string Abbreviate(string source, int maxLength)
         {
-            // Remove the line below then add your implementation.
-            throw new NotImplementedException("Error: Abbreviate is not implemented!");
+
+
+            char[] arr = source.ToCharArray();
+
+            if (string.IsNullOrEmpty(source))
+                return source;
+
+            else if (maxLength > arr.Length)
+            {
+                Console.WriteLine(source);
+            }
+            else if (maxLength < arr.Length)
+            {
+                for (int i = 0; i < maxLength; i++)
+                {
+                    Console.Write(arr[i]);
+                }
+            }
+            return new string(arr);
+
         }
         /// <summary>
         /// Capitalize the first symbol of string <paramref name="source"/> and returns a new capitalized string
